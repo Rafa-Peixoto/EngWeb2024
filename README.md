@@ -7,4 +7,4 @@ Trabalhos Realizados na Unidade Curricular de Engenharia Web
 
 - **Nome:** Rafael Vale da Costa Peixoto
 - **ID:** a100754
-- **Foto:** ![Fotografia] (myfoto.jpg)
+- **Foto:** ![Fotografia](myfoto.jpg)
