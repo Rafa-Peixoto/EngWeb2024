@@ -1,5 +1,4 @@
 # TPC2: Processar o dataset Mapa Virtual
-## 2024-02-19
 
 ## Autor:
 - A100754
