@@ -436,11 +436,9 @@ Existem 3 níveis de acesso: Admin(nivel 3), Docente(nivel 2), Aluno(nivel 1).Al
 
 ### Página de Editar UC
 
-![Página de Editar UC](./imagens/editaruc.png)
-
 ### Página de Criar UC
 
-![Página de Criar UC](./imagens/criaruc.png)
+
 
 
 
