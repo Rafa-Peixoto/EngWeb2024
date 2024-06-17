@@ -1,0 +1,665 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Barra de navegação superior e sub-navegação */
+.nav-bar, .sub-nav {
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-bar {
+    background-color: #4CAF50; /* Verde escuro */
+    top: 0;
+    height: 50px; /* Altura fixa */
+}
+.nav-bar, .sub-nav {
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sub-nav {
+    background-color: #36B597; /* Verde claro */
+    top: 50px; /* Alinhado diretamente abaixo da nav-bar sem espaço */
+    height: 50px;
+    justify-content: space-between; /* Espaço entre elementos */
+    align-items: center;
+}
+
+.sub-nav form {
+    display: flex;
+    align-items: center;
+}
+
+.sub-nav input[type="text"], .sub-nav form input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+/* Barra de navegação */
+.nav-bar a, .sub-nav a {
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-bar a:hover, .sub-nav a:hover {
+    color: #ddd;
+}
+
+/* Ajustes na barra de pesquisa para ter maior destaque */
+.sub-nav input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Espaçamento do conteúdo principal para começar abaixo das barras fixas */
+.container, .uc-info, .form-container {
+    margin-top: 120px; /* Aumentado para garantir espaço suficiente para as duas barras */
+}
+
+/* Contêiner para cartões UC */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+/* Estilização dos cartões UC */
+.uc-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: calc(33.333% - 40px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.uc-card:hover {
+    transform: scale(1.05);
+}
+
+.uc-card h2, .uc-card p {
+    margin-bottom: 5px;
+}
+
+.uc-card a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.uc-card a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé fixo no fundo da página */
+.footer {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para a barra lateral na página de UC específica */
+.side-nav {
+    position: fixed;
+    top: 100px; /* Ajustado para caber sob as barras de navegação */
+    left: 0;
+    width: 200px;
+    height: calc(100% - 100px); /* Ajuste baseado na altura das barras de navegação */
+    background-color: #36B597;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.side-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side-nav li a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.side-nav li a:hover {
+    background-color: #2a5440;
+}
+
+/* Ajustes para o conteúdo da página principal, movido para a direita devido à barra lateral */
+.uc-info {
+    margin-left: 220px; /* Ajuste conforme a largura da sua barra lateral */
+    padding: 20px;
+}
+
+/* Estilos para os cartões de aula */
+.aulas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.aula-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: calc(50% - 40px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.aula-card:hover {
+    transform: scale(1.05);
+}
+
+.aula-card h3 {
+    margin-top: 0;
+}
+
+.aula-links ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.aula-links a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.aula-links a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo adicional para título centralizado na barra verde clara */
+.sub-nav h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Estilos personalizados para o formulário */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 150px; /* Ajuste para dar espaço à barra superior */
+}
+
+button {
+    width: 100%;
+}
+
+/* Estilo adicional para o título */
+h1 {
+    font-size: 2rem;
+    color: #4CAF50; /* Cor verde escuro */
+    text-align: left; /* Alinhado à esquerda */
+}
+
+/* Espaçamento adicional */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para textarea */
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Estilos para a página de perfil */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+    margin-top: 60px;
+}
+
+.profile-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-card img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info h2 {
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+/* Estilo para remover negrito dos nomes dos docentes */
+.docentes {
+    font-weight: normal;
+}
+
+/* Estilo para os botões na barra lateral */
+.side-nav li a.button {
+    background-color: #36B597; /* Mesma cor que "Geral", "Aulas" e "Conteúdo" */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.side-nav li a.button:hover {
+    background-color: #2a5440;
+}
+
+.side-nav hr {
+    margin: 450px 0;
+    border: 0;
+    border-top: 0px solid #ddd;
+}
+/* Estilos específicos para a página de boas-vindas, login e registro */
+/* Estilos específicos para a página de boas-vindas, login e registro */
+/* Estilos específicos para a página de boas-vindas, login e registro */
+.welcome-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente */
+    background-color: transparent; /* Transparente para mostrar o background-blur */
+    position: relative;
+}
+
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/entrada-da-universidade-do-minho_661c0d3ecb4f7.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px); /* Ajuste conforme necessário */
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center; /* Centraliza o texto dentro do h1 */
+}
+
+.container a {
+    text-decoration: none;
+    margin: 10px;
+}
+
+.container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.container button:hover {
+    background-color: #0056b3;
+}
+/* Estilos específicos para a página de login */
+/* Estilos específicos para a página de login */
+.login-page .login-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Ajuste conforme necessário */
+    margin: 100px auto 0; /* Adiciona margem superior para puxar a caixa para baixo */
+}
+
+.login-page .login-container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.login-page .login-container form div {
+    margin-bottom: 15px;
+}
+
+.login-page .login-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-page .login-container input[type="text"],
+.login-page .login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-page .login-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.login-page .login-container button:hover {
+    background-color: #0056b3;
+}
+
+.login-page .login-container a {
+    display: block;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+.login-page .login-container a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Estilos específicos para a página de registro */
+.register-page .register-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Ajuste conforme necessário */
+    margin: 60px auto; /* Centraliza horizontalmente e adiciona margem superior */
+}
+
+.register-page .register-container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center;;
+}
+
+.register-page .register-container form div {
+    margin-bottom: 15px;
+}
+
+.register-page .register-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.register-page .register-container input[type="text"],
+.register-page .register-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.register-page .register-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.register-page .register-container button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilos para o botão de voltar */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+/* Ajustes para garantir que o formulário esteja visível em qualquer monitor */
+.form-container {
+    max-width: 800px;
+    margin: 100px auto; /* Reduz o espaço no topo */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Alinhar os rótulos com o início da respectiva caixa de texto */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+}
+
+/* Ajuste adicional para campos de texto e textarea */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+
+/* Estilos para a barra lateral */
+.side-nav {
+    position: fixed;
+    top: 100px; /* Ajustado para caber sob as barras de navegação */
+    left: 0;
+    width: 200px;
+    height: calc(100% - 100px); /* Ajuste baseado na altura das barras de navegação */
+    background-color: #36B597;
+    padding: 10px 0;
+    z-index: 999;
+    overflow-y: auto; /* Adicionado para permitir rolagem se necessário */
+}
+
+.side-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side-nav li a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.side-nav li a:hover {
+    background-color: #2a5440;
+}
+
+/* Ajustes para visibilidade dos botões */
+.side-nav li a.button {
+    background-color: #36B597; /* Mesma cor que "Geral", "Aulas" e "Conteúdo" */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.side-nav li a.button:hover {
+    background-color: #2a5440;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .side-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: auto;
+    }
+
+    .side-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .side-nav li {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .side-nav li a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+/* Estilos para o botão "Sair" */
+button.leave-uc-button {
+    background-color: #36B597; /* Mesma cor que "Geral", "Aulas" e "Conteúdo" */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: block; /* Garante que o botão ocupe toda a largura disponível */
+    margin: 5px 0; /* Espaçamento entre os botões */
+    text-decoration: none;
+    border: none; /* Remove a borda padrão do botão */
+    cursor: pointer;
+}
+
+button.leave-uc-button:hover {
+    background-color: #2a5440;
+}
+.side-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side-nav li {
+    margin-bottom: 10px;
+}
+
+.side-nav li a, .leave-uc-button {
+    background-color: #36B597; /* Mesma cor que "Geral", "Aulas" e "Conteúdo" */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: block; /* Garante que os botões ocupem toda a largura disponível */
+    margin: 5px 20px; /* Ajuste a margem conforme necessário */
+    text-decoration: none;
+}
+
+.side-nav li a:hover, .leave-uc-button:hover {
+    background-color: #2a5440;
+}

@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Register
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body(class="register-page")
+    .background-blur
+    a.back-button(href="/welcome") Voltar
+    .register-container
+      h1 Registo
+      form(action="/welcome/register", method="post")
+        div
+          label(for="name") Name:
+          input(type="text", name="name", id="name")
+        div
+          label(for="username") Username:
+          input(type="text", name="username", id="username")
+        div
+          label(for="password") Password:
+          input(type="password", name="password", id="password")
+        div
+          label(for="email") Email:
+          input(type="text", name="email", id="email")
+        button(type="submit") Register
+      a(href="/welcome/login") Já tem uma conta? Faça login aqui

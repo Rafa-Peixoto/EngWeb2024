@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  .sub-nav
+    input(type="text" placeholder="Pesquisar UCs")
+    form#addUcForm(method='POST', action='/add-uc')
+      input(type='text', name='siglaUC', placeholder='Digite a sigla da UC', required=true)
+    if userLevel >= 2
+      a(href="/criar")
+        i.fas.fa-plus Criar UC
+
+  .container
+    each uc in uniqueUcs
+      .uc-card
+        h2= uc.titulo
+        p Docentes: #{uc.docentes.join(', ')}
+        a(href=`/ucs/${uc.sigla}`) Mais informações
+
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.querySelector('.sub-nav input[type="text"]');
+      const ucsCards = document.querySelectorAll('.uc-card');
+    
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        ucsCards.forEach(card => {
+          const title = card.querySelector('h2').textContent.toLowerCase();
+          if (title.includes(searchTerm)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+
+      // Optional script to submit form on Enter key press
+      const addUcInput = document.querySelector('#addUcForm input[name="siglaUC"]');
+      addUcInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          document.getElementById('addUcForm').submit();
+        }
+      });
+    });

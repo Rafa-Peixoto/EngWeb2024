@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Login Page
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body(class="login-page")
+    .background-blur
+    a.back-button(href="/welcome") Voltar
+    .login-container
+      h1 Login Page
+      form(action="/welcome/login", method="post")
+        div
+          label(for="username") Username:
+          input(type="text", name="username", id="username")
+        div
+          label(for="password") Password:
+          input(type="password", name="password", id="password")
+        button(type="submit") Login
+      a(href="/welcome/register") Não tem uma conta? Registre-se aqui
